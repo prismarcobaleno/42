@@ -16,10 +16,10 @@ $(NAME): $(OBJS)
 $(OBJS): $(NAME) # xke???
 		$(CC) $(CFLAGS) -c $(SRCS)
 
-clean :
+clean:
 		rm -f $(OBJS) 
 
-re : fclean
+re: fclean
 		$(MAKE) all
 
 fclean: clean
