@@ -13,10 +13,10 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar rcs $(NAME) $(OBJS)
 
-$(OBJS): $(NAME) # xke???
+$(OBJS): $(SRCS) # xke???
 		$(CC) $(CFLAGS) -c $(SRCS)
 
-clean:
+clean: $(OBJS) 
 		rm -f $(OBJS) 
 
 re: fclean
