@@ -1,18 +1,18 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosmessi <rosmessi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/29 12:54:05 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/16 16:54:11 by rosmessi         ###   ########.fr       */
+/*   Created: 2025/12/20 14:37:32 by rosmessi          #+#    #+#             */
+/*   Updated: 2025/12/20 14:38:02 by rosmessi         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
-// #include <stdio.h>
+#include <stdio.h>
 // printf
-// #include <string.h>
+#include <string.h>
 // per la prova
 
 int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
@@ -26,21 +26,16 @@ int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
 	s2 = (unsigned char *) str2;
 	i = 0;
 	conta = 0;
-	while (conta == 0 && n-- > 0)
+	while (i < n)
 	{
-		if (s1[i] > s2[i])
+		if (s1[i] != s2[i])
 		{
 			conta = s1[i] - s2[i];
-		}
-		else if (s1[i] < s2[i])
-		{
-			conta = -(s2[i] - s1[i]);
-		}
-		if (s1[i] == '\0')
 			return (conta);
+		}
 		i++;
 	}
-	return (conta);
+	return (0);
 }
 /*int	main(int argc, char *argv[])
 {
@@ -55,5 +50,9 @@ int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
 		printf("\tvera:\t%d\n", memcmp(argv[1], argv[2], num));
 	}
 	else
+	{
 		printf("\tDammi 2 argomenti!\n");
+		printf("\tmia:\t%d\n", ft_memcmp("aaaa", "aaau", 3));
+		printf("\tvera:\t%d\n", memcmp("aaaa", "aaau", 3));
+	}
 }*/

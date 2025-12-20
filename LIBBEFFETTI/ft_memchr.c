@@ -1,16 +1,28 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosmessi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/04 15:35:38 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/17 17:59:49 by rosmessi         ###   ########.fr       */
+/*   Created: 2025/12/20 14:46:59 by rosmessi          #+#    #+#             */
+/*   Updated: 2025/12/20 14:47:00 by rosmessi         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "libft.h"
+
+static int	contastringa(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i += 1;
+	}
+	return (i);
+}
 
 void	*ft_memchr(const void *s, int c, unsigned long n)
 {
@@ -18,14 +30,16 @@ void	*ft_memchr(const void *s, int c, unsigned long n)
 	unsigned char	*str;
 	unsigned long	i;
 	unsigned char	*fine;
-	
+
 	cara = c;
 	i = 0;
 	str = (unsigned char *) s;
+	if (n == 0)
+		return (NULL);
 	if (c == '\0')
 	{
-		fine = str + ft_strlen(s);
-		return(fine);
+		fine = str + contastringa(s);
+		return (fine);
 	}
 	while (i++ < n && str[i] != '\0')
 	{
@@ -36,9 +50,9 @@ void	*ft_memchr(const void *s, int c, unsigned long n)
 	}
 	return ((void *)0);
 }
-/* //int	main()
+/*int	main()
 {
-	printf("miao %s\n", (unsigned char	*) ft_memchr("marcobaleno", 'v', 5555));
+	printf("miao %s\n", (unsigned char	*) ft_memchr("marcobaleno", 'a', 5555));
 	return(0);
 
 }*/

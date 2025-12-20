@@ -30,7 +30,7 @@ memchr
 memcmp
 strnstr
 * atoi
-*/
+
 
 void	*ft_memset(void *str, int c, unsigned long int n)
 {
@@ -110,3 +110,4 @@ void	*ft_memmove(void *dest, const void *src, unsigned long int n)
 	}
 	return (dest);
 }
+*/

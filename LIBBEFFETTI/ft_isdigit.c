@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosasofiamessina@gmail.com>      +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 17:56:40 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/04 15:36:39 by rosmessi         ###   ########.fr       */
+/*   Created: 2025/12/20 14:36:23 by rosmessi          #+#    #+#             */
+/*   Updated: 2025/12/20 14:43:58 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
-	if ((c < '0' || c > '9'))
+	if (c < '0' || c > '9')
 	{
 		return (0);
 	}
