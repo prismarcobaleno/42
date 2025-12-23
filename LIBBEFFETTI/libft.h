@@ -49,15 +49,33 @@ char			*ft_strdup(const char *s);
 char			*ft_substr(char const *s, unsigned int inizio,
 					unsigned long len);
 
+void			ft_putstr_fd(char *s, int fd);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putendl_fd(char *s, int fd);
+
+char			*ft_strjoin(char const *s1, char const *s2);
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 /*
+char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strtrim(char const *s1, char const *set);
 
-strlcat(char *dst, const char *src, size_t size);
+char			**ft_split(char const *s, char c);
 
+char			*ft_itoa(int n);
 
-void	*malloc(size_t size);
-void	free(void *ptr);
-void	*calloc(size_t nmemb, size_t size);
-void	*realloc(void *ptr, size_t size);
+char			*ft_strmapi(char const *s, char (*f)(unsigned
+int, char));
+
+void			ft_striteri(char *s, void (*f)(unsigned int,
+char*));
+
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
 
 static __attribute__((unused))
 size_t strlcpy(char *dst, const char *src, size_t size)
@@ -442,6 +460,98 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long int n); //
 void	*ft_memmove(void *dest, const void *src, unsigned long int n); //
 
 memcpy
+memmove
+? strlcpy
+? strlcat
+strchr
+strrchr
+* strncmp
+memchr
+memcmp
+strnstr
+* atoi
+
+
+void	*ft_memset(void *str, int c, unsigned long int n)
+{
+	char			*p;
+	unsigned int	i;
+
+	p = (char *)str;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = c;
+		i++;
+	}
+	return (str);
+}
+
+void	ft_bzero(void *s, unsigned long int n)
+{
+	char			*p;
+	unsigned int	i;
+
+	p = (char *)s;
+	i = 0;
+	while (i < n)
+	{
+		p[i] = '\0';
+		i++;
+	}
+}
+
+void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
+{
+	unsigned int	i;
+	char			*fonte;
+	char			*destino;
+
+	fonte = (char *)src;
+	destino = (char *)dest;
+	i = 0;
+	while ((fonte[i] != '\0') && (i < n))
+	{
+		destino[i] = fonte[i];
+		i++;
+	}
+	return (dest);
+}
+
+void	*ft_memmove(void *dest, const void *src, unsigned long int n)
+{
+	unsigned int	i;
+	char			*fonte;
+	char			*destino;
+	char			*tempo;
+
+	i = 0;
+	fonte = (char *)src;
+	destino = (char *)dest;
+	tempo = (char *)malloc(sizeof(char) * n);
+	if (tempo == NULL)
+	{
+		return (NULL);
+	}
+	else
+	{
+		while ((fonte[i] != '\0') && (i < n))
+		{
+			tempo[i] = fonte[i];
+			i++;
+		}
+		i = 0;
+		while ((tempo[i] != '\0') && (i < n))
+		{
+			destino[i] = tempo[i];
+			i++;
+		}
+		free(tempo);
+	}
+	return (dest);
+}
+*/
+/*memcpy
 memmove
 ? strlcpy
 ? strlcat

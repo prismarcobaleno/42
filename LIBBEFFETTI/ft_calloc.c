@@ -10,33 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-static int seFuori(unsigned long a, unsigned long b)
+static int	se_fuori_ul(unsigned long a, unsigned long b)
 {
-	unsigned long long alun;
-	unsigned long long blun;
-	unsigned long long risulta;
-
-	alun = (unsigned long long) a;
-	blun = (unsigned long long) b;
-	risulta = alun * blun;
-	if (risulta > 18446744073709551615ULL)
-	{
+	if (b == 0)
+		return (0);
+	else if (a > 18446744073709551615UL / b)
 		return (1);
-	}
-	else if (risulta < 0)
-	{
-		return (1);
-	}
 	return (0);
 }
 
 static void	azzero(void *s, unsigned long n)
 {
 	char			*p;
-	unsigned int	i;
+	unsigned long	i;
 
 	p = (char *)s;
 	i = 0;
@@ -51,15 +39,9 @@ void	*ft_calloc(unsigned long memb, unsigned long quant)
 {
 	void	*punt;
 
-	if (memb < 0 || quant < 0)
-		return (NULL);
-	if (memb == 18446744073709551615UL || quant == 18446744073709551615UL)
-		return (NULL);
-	else if (seFuori(memb, quant) == 1)
-		return (NULL);
-	else if ((memb * quant) < 0)
-		return (NULL);
-	punt = (void *)malloc(memb * quant);
+	if (se_fuori_ul(memb, quant))
+		return (((void *)0));
+	punt = malloc(memb * quant);
 	if (!punt)
 		return (((void *)0));
 	azzero(punt, (memb * quant));
@@ -67,5 +49,7 @@ void	*ft_calloc(unsigned long memb, unsigned long quant)
 }
 /*int	main ()
 {
+	printf("%p", ft_calloc(-5, -5));
+	printf("miao(((((\n");
 	return 0;
 }*/
