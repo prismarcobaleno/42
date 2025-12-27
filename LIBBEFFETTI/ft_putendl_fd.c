@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosmessi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 14:36:23 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/20 14:43:58 by rosmessi         ###   ########.fr       */
+/*   Created: 2025/12/23 17:34:01 by rosmessi          #+#    #+#             */
+/*   Updated: 2025/12/23 17:34:03 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 #include "libft.h"
 
-int	ft_isdigit(int c)
+static unsigned int	strlun(const char *str)
 {
-	if (c < '0' || c > '9')
+	int	i;
+
+	i = 0;
+	while (str[i])
 	{
-		return (0);
+		i += 1;
 	}
-	return (1);
+	return (i);
 }
+
+void	ft_putendl_fd(char *s, int fd)
+{
+	write(fd, s, strlun(s));
+	write(fd, "\n", 1);
+
+}
+/*int		main()
+{
+	ft_putstr_fd("sdgfjhgjga", 1);
+}*/

@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosmessi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 14:36:23 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/20 14:43:58 by rosmessi         ###   ########.fr       */
+/*   Created: 2025/12/22 17:05:03 by rosmessi          #+#    #+#             */
+/*   Updated: 2025/12/22 17:05:11 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include <stdio.h>
 #include "libft.h"
 
-int	ft_isdigit(int c)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c < '0' || c > '9')
-	{
-		return (0);
-	}
-	return (1);
+	char	str[1];
+
+	str[0] = c;
+	write(fd, str, 1);
 }
+/*
+int		main()
+{
+	ft_putchar_fd('a', 1);
+}*/
