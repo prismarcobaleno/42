@@ -6,9 +6,10 @@
 /*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/23 17:34:01 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/23 17:34:03 by rosmessi         ###   ########.fr       */
+/*   Updated: 2026/01/07 17:57:11 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include <stdio.h>
 #include "libft.h"
 
@@ -28,7 +29,6 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	write(fd, s, strlun(s));
 	write(fd, "\n", 1);
-
 }
 /*int		main()
 {
