@@ -24,15 +24,14 @@ static unsigned int	strlun(const char *str)
 	return (i);
 }
 
-
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*punt;
 
 	punt = malloc(strlun(s1) + strlun(s2));
 	if (!punt)
 		return (((void *)0));
-	return(NULL);
+	return (NULL);
 }
 
 // fkjfdjlgdkjk

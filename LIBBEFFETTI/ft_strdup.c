@@ -13,19 +13,38 @@
 #include <stdlib.h>
 #include "libft.h"
 
+static int	strlun(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		i += 1;
+	}
+	return (i);
+}
+
 char	*ft_strdup(const char *s)
 {
 	char			*punt;
 	unsigned long	i;
 
-	i = ft_strlen(s);
-	punt = (void *)malloc(i);
+	if (!s)
+		return (((void *)0));
+	punt = (char *)malloc(sizeof(*s) * (strlun(s) + 1));
 	if (!punt)
 		return (((void *)0));
-	else
+	i = 0;
+	while (s[i])
 	{
-		while (s[i++])
-			punt[i] = s[i];
+		punt[i] = s[i];
+		i++;
 	}
+	punt[i] = '\0';
 	return (punt);
 }
+/*int		main()
+{
+	printf("%s \n ", ft_strdup("sdgfjhgjga"));
+}*/
