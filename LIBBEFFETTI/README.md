@@ -2,7 +2,7 @@
 of the 42 curriculum by rosmessi.**
 
 # Description
-Un po' di funzioni della libc + altre 
+Un po' di funzioni della libc + altre ().
 
 # Instructions
 Scaricala e scrivi "make" sulla cartella nel terminale...
