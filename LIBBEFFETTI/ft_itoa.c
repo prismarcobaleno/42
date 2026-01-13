@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "libft.h"
 
-unsigned long		conta(int n)
+static unsigned long	conta(int n)
 {
-	unsigned long i;
-	
+	unsigned long	i;
 	i = 0;
 	if (n < 0)
 	{
@@ -22,8 +22,11 @@ unsigned long		conta(int n)
 char	*ft_itoa(int n)
 {
 	char	*stri;
-	
-	stri = malloc(conta (n));
+
+	conta (n);
+	stri = malloc(n);
+	if (!stri)
+		return (NULL);
 	return (stri);
 }
 

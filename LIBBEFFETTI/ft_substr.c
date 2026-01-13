@@ -24,14 +24,19 @@ char
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i++])
+	while (s[i])
 	{
 		if (i >= inizio && j < len)
 		{
 			str[j] = s[i];
 			j++;
 		}
+		i++;
 	}
 	str[j] = 0;
 	return (str);
 }
+/*int	main ()
+{
+	printf("%s", ft_substr("13457", 0, 4000));
+}*/
