@@ -16,67 +16,79 @@
 #include <stdlib.h>
 // POI TOGLILE!!!!!!!
 
-int				ft_isalpha(char c);
-int				ft_isdigit(int c);
-int				ft_isalnum(char c);
-int				ft_isascii(char c);
-int				ft_isprint(char c);
-int				ft_toupper(int c);
-int				ft_tolower(int c);
+int		ft_isalpha(char c);
+int		ft_isdigit(int c);
+int		ft_isalnum(char c);
+int		ft_isascii(char c);
+int		ft_isprint(char c);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
-void			*ft_memset(void *s, int c, unsigned long int n);
-void			ft_bzero(void *s, unsigned long n);
-void			*ft_memcpy(void *dest, const void *src, unsigned long n);
-void			*ft_memmove(void *dest, const void *fon, unsigned long lun);
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memmove(void *dest, const void *fon, size_t lun);
 
-void			*ft_memchr(const void *s, int c, unsigned long n);
-int				ft_memcmp(const void *str1, const void *str2, unsigned long n);
-unsigned long	ft_strlcpy(char *dst, const char *src, unsigned long size);
-unsigned long	ft_strlcat(char *dst, const char *fon, unsigned long size);
-char			*ft_strnstr(const char *libro, const char *parola,
-					unsigned long lun);
+void	*ft_memchr(const void *s, int c, size_t n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+size_t	ft_strlcat(char *dst, const char *fon, size_t size);
+char	*ft_strnstr(const char *libro, const char *parola, size_t lun);
 
-int				ft_strlen(const char *str);
-int				ft_strncmp(char *s1, const char *s2, unsigned long int n);
-char			*ft_strchr(const char *s, int c);
-char			*ft_strrchr(const char *s, int cara);
+int		ft_strlen(const char *str);
+int		ft_strncmp(char *s1, const char *s2, size_t n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int cara);
 
-int				ft_atoi(const char *nptr);
+int		ft_atoi(const char *nptr);
 
-void			*ft_calloc(unsigned long memb, unsigned long quant);
-char			*ft_strdup(const char *s);
+void	*ft_calloc(size_t memb, size_t quant);
+char	*ft_strdup(const char *s);
 
-char			*ft_substr(char const *s, unsigned int inizio,
-					unsigned long len);
+char	*ft_substr(char const *s, unsigned int inizio,
+			size_t len);
 
-void			ft_putstr_fd(char *s, int fd);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putendl_fd(char *s, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putendl_fd(char *s, int fd);
 
-char			*ft_strjoin(char const *s1, char const *s2);
-char			*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+
+char	**ft_split(const char *s, char c);
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
 /*
-char			*ft_strjoin(char const *s1, char const *s2);
-char			*ft_strtrim(char const *s1, char const *set);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 
-char			**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 
-char			*ft_itoa(int n);
+char	*ft_itoa(int n);
 
-char			*ft_strmapi(char const *s, char (*f)(unsigned
+char	*ft_strmapi(char const *s, char (*f)(unsigned
 int, char));
 
-void			ft_striteri(char *s, void (*f)(unsigned int,
+void	ft_striteri(char *s, void (*f)(unsigned int,
 char*));
 
-void			ft_putendl_fd(char *s, int fd);
-void			ft_putnbr_fd(int n, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 static __attribute__((unused))
 size_t strlcpy(char *dst, const char *src, size_t size)
@@ -86,7 +98,7 @@ size_t strlcpy(char *dst, const char *src, size_t size)
 	for (len = 0; len < size; len++) {
 		dst[len] = src[len];
 		if (!dst[len])
-			return len;
+	return len;
 	}
 	if (size)
 		dst[size-1] = '\0';
@@ -222,7 +234,7 @@ int	ft_tolower(int c)
 	return(c);
 }
 
-void	*ft_memset(void *str, int c, unsigned long int n)
+void	*ft_memset(void *str, int c, size_t n)
 {
 	char *p;
 	unsigned int i;
@@ -238,7 +250,7 @@ void	*ft_memset(void *str, int c, unsigned long int n)
 }
 
 
-void	ft_bzero(void *s, unsigned long int n)
+void	ft_bzero(void *s, size_t n)
 {
 	char *p = (char *)s;
 	unsigned int i = 0;
@@ -250,7 +262,7 @@ void	ft_bzero(void *s, unsigned long int n)
 	}
 }
 
-void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
 	char *fonte;
@@ -268,7 +280,7 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
 		return (dest);
 }
 
-void	*ft_memmove(void *dest, const void *src, unsigned long int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
 	char *fonte;
@@ -288,24 +300,24 @@ void	*ft_memmove(void *dest, const void *src, unsigned long int n)
 	{
 		while ((fonte[i] != '\0') && (i < n))
 		{
-			tempo[i] = fonte[i];
-			i++;
+	tempo[i] = fonte[i];
+	i++;
 		}
 		i = 0;
 		while ((tempo[i] != '\0') && (i < n))
 		{
-			destino[i] = tempo[i];
-			i++;
+	destino[i] = tempo[i];
+	i++;
 		}
 		free(tempo);
 	}
 	return (dest);
 }
 
-int	ft_strncmp(char *s1, const char *s2, unsigned long int n)
+int	ft_strncmp(char *s1, const char *s2, size_t n)
 {
-	unsigned long int	i;
-	unsigned long int conta;
+	size_t	i;
+	size_t conta;
 
 	i = 0;
 	conta = 0;
@@ -313,15 +325,15 @@ int	ft_strncmp(char *s1, const char *s2, unsigned long int n)
 	{
 		if (s1[i] > s2[i])
 		{
-			conta = s1[i] - s2[i];
+	conta = s1[i] - s2[i];
 		}
 		else if (s1[i] < s2[i])
 		{
-			conta = -(s2[i] - s1[i]);
+	conta = -(s2[i] - s1[i]);
 		}
 		if (s1[i] == '\0')
 		{
-			return (conta);
+	return (conta);
 		}
 		i++;
 	}
@@ -353,7 +365,7 @@ int	ft_atoi(const char *nptr)
 	{
 		if (nptr[i] == '-')
 		{
-			neg *= -1;
+	neg *= -1;
 		}
 		i++;
 	}
@@ -365,11 +377,11 @@ int	ft_atoi(const char *nptr)
 	return (num * neg);
 }
 
-void	*ft_memchr(const void *s, int c, unsigned long n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	cara;
 	unsigned char	*str;
-	unsigned long	i;
+	size_t	i;
 
 	cara = c;
 	i = 0;
@@ -378,7 +390,7 @@ void	*ft_memchr(const void *s, int c, unsigned long n)
 	{
 		if (str[i] == cara)
 		{
-			return (&str[i]);
+	return (&str[i]);
 		}
 	}
 	return (NULL);
@@ -455,10 +467,10 @@ int	main(int argc, char *argv[])
 #include <stdio.h>
 #include <stdlib.h>
 
-void	*ft_memset(void *s, int c, unsigned long int n);
-void	ft_bzero(void *s, unsigned long int n);
-void	*ft_memcpy(void *dest, const void *src, unsigned long int n); //
-void	*ft_memmove(void *dest, const void *src, unsigned long int n); //
+void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *s, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n); //
+void	*ft_memmove(void *dest, const void *src, size_t n); //
 
 memcpy
 memmove
@@ -473,9 +485,9 @@ strnstr
 * atoi
 
 
-void	*ft_memset(void *str, int c, unsigned long int n)
+void	*ft_memset(void *str, int c, size_t n)
 {
-	char			*p;
+	char	*p;
 	unsigned int	i;
 
 	p = (char *)str;
@@ -488,9 +500,9 @@ void	*ft_memset(void *str, int c, unsigned long int n)
 	return (str);
 }
 
-void	ft_bzero(void *s, unsigned long int n)
+void	ft_bzero(void *s, size_t n)
 {
-	char			*p;
+	char	*p;
 	unsigned int	i;
 
 	p = (char *)s;
@@ -502,11 +514,11 @@ void	ft_bzero(void *s, unsigned long int n)
 	}
 }
 
-void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
-	char			*fonte;
-	char			*destino;
+	char	*fonte;
+	char	*destino;
 
 	fonte = (char *)src;
 	destino = (char *)dest;
@@ -519,12 +531,12 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
 	return (dest);
 }
 
-void	*ft_memmove(void *dest, const void *src, unsigned long int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
-	char			*fonte;
-	char			*destino;
-	char			*tempo;
+	char	*fonte;
+	char	*destino;
+	char	*tempo;
 
 	i = 0;
 	fonte = (char *)src;
@@ -538,8 +550,8 @@ void	*ft_memmove(void *dest, const void *src, unsigned long int n)
 	{
 		while ((fonte[i] != '\0') && (i < n))
 		{
-			tempo[i] = fonte[i];
-			i++;
+	tempo[i] = fonte[i];
+	i++;
 		}
 		i = 0;
 		while ((tempo[i] != '\0') && (i < n))
@@ -565,7 +577,7 @@ strnstr
 * atoi
 
 
-void	*ft_memset(void *str, int c, unsigned long int n)
+void	*ft_memset(void *str, int c, size_t n)
 {
 	char			*p;
 	unsigned int	i;
@@ -580,7 +592,7 @@ void	*ft_memset(void *str, int c, unsigned long int n)
 	return (str);
 }
 
-void	ft_bzero(void *s, unsigned long int n)
+void	ft_bzero(void *s, size_t n)
 {
 	char			*p;
 	unsigned int	i;
@@ -594,7 +606,7 @@ void	ft_bzero(void *s, unsigned long int n)
 	}
 }
 
-void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
 	char			*fonte;
@@ -611,12 +623,12 @@ void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
 	return (dest);
 }
 
-void	*ft_memmove(void *dest, const void *src, unsigned long int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned int	i;
-	char			*fonte;
-	char			*destino;
-	char			*tempo;
+	char	*fonte;
+	char	*destino;
+	char	*tempo;
 
 	i = 0;
 	fonte = (char *)src;
@@ -630,14 +642,14 @@ void	*ft_memmove(void *dest, const void *src, unsigned long int n)
 	{
 		while ((fonte[i] != '\0') && (i < n))
 		{
-			tempo[i] = fonte[i];
-			i++;
+	tempo[i] = fonte[i];
+	i++;
 		}
 		i = 0;
 		while ((tempo[i] != '\0') && (i < n))
 		{
-			destino[i] = tempo[i];
-			i++;
+	destino[i] = tempo[i];
+	i++;
 		}
 		free(tempo);
 	}

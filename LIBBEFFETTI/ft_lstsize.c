@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosasofiamessina@gmail.com>      +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 17:58:04 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/04 15:37:28 by rosmessi         ###   ########.fr       */
+/*   Created: 2026/01/14 16:49:14 by rosmessi          #+#    #+#             */
+/*   Updated: 2026/01/14 16:49:29 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-//serve per la prossima
-int	ft_se_maiuscola(int s)
+int	ft_lstsize(t_list *lst)
 {
-	if (!(s >= 'A' && s <= 'Z'))
-		return (0);
-	else
-		return (1);
-}
+	size_t	i;
 
-int	ft_tolower(int c)
-{
-	if (ft_se_maiuscola(c) == 1)
-		c = c + 32;
-	return (c);
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

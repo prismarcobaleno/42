@@ -1,8 +1,8 @@
 #include "libft.h"
 
-static unsigned long	conta(int n)
+static size_t	conta(int n)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	if (n < 0)

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 //serve per la prossima
-int	se_minuscola(int s)
+int	ft_se_minuscola(int s)
 {
 	if (!(s >= 'a' && s <= 'z'))
 		return (0);
@@ -21,7 +21,7 @@ int	se_minuscola(int s)
 
 int	ft_toupper(int c)
 {
-	if (se_minuscola(c) == 1)
+	if (ft_se_minuscola(c) == 1)
 		c = c - 32;
 	return (c);
 }

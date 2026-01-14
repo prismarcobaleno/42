@@ -9,10 +9,10 @@
 /*   Updated: 2025/12/20 14:38:02 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
+#include "libft.h"
+//#include <stdio.h>
 // printf
-#include <string.h>
+//#include <string.h>
 // per la prova
 
 int	ft_memcmp(const void *str1, const void *str2, unsigned long n)

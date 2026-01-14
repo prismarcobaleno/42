@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	se_fuori_ul(unsigned long a, unsigned long b)
+static int	se_fuori_ul(size_t a, size_t b)
 {
 	if (b == 0)
 		return (0);
@@ -21,10 +21,10 @@ static int	se_fuori_ul(unsigned long a, unsigned long b)
 	return (0);
 }
 
-static void	azzero(void *s, unsigned long n)
+static void	azzero(void *s, size_t n)
 {
-	char			*p;
-	unsigned long	i;
+	char	*p;
+	size_t	i;
 
 	p = (char *)s;
 	i = 0;
@@ -35,7 +35,7 @@ static void	azzero(void *s, unsigned long n)
 	}
 }
 
-void	*ft_calloc(unsigned long memb, unsigned long quant)
+void	*ft_calloc(size_t memb, size_t quant)
 {
 	void	*punt;
 

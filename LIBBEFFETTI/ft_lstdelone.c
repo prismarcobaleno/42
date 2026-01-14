@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rosmessi <rosasofiamessina@gmail.com>      +#+  +:+       +#+        */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 17:58:04 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/04 15:37:28 by rosmessi         ###   ########.fr       */
+/*   Created: 2026/01/14 19:24:07 by rosmessi          #+#    #+#             */
+/*   Updated: 2026/01/14 19:24:21 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//serve per la prossima
-int	ft_se_maiuscola(int s)
-{
-	if (!(s >= 'A' && s <= 'Z'))
-		return (0);
-	else
-		return (1);
-}
+#include "libft.h"
 
-int	ft_tolower(int c)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	if (ft_se_maiuscola(c) == 1)
-		c = c + 32;
-	return (c);
+	if (!del || !lst)
+		return ;
+	del(lst->content);
+	free(lst);
 }

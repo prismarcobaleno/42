@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/22 17:05:03 by rosmessi          #+#    #+#             */
-/*   Updated: 2026/01/14 19:25:30 by rosmessi         ###   ########.fr       */
+/*   Created: 2026/01/14 18:10:48 by rosmessi          #+#    #+#             */
+/*   Updated: 2026/01/14 18:26:02 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-//#include <stdio.h>
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	char	str[1];
+	t_list	*listaf;
+	t_list	*funzionato;
 
-	str[0] = c;
-	write(fd, str, 1);
+	if (!lst || !f || !del)
+		return (NULL);
+	listaf = NULL;
+	while (lst)
+	{
+		funzionato = ft_lstnew(f(lst->content));
+		if (!funzionato)
+		{
+			ft_lstclear(&listaf, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&listaf, funzionato);
+		lst = lst->next;
+	}
+	return (listaf);
 }
-/*
-int		main()
-{
-	ft_putchar_fd('a', 1);
-}*/
