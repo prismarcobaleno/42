@@ -19,7 +19,7 @@
 int		ft_isalpha(char c);
 int		ft_isdigit(int c);
 int		ft_isalnum(char c);
-int		ft_isascii(char c);
+int		ft_isascii(int c);
 int		ft_isprint(char c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
@@ -51,11 +51,14 @@ char	*ft_substr(char const *s, unsigned int inizio,
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	**ft_split(const char *s, char c);
+char	*ft_itoa(int n);
+
 
 typedef struct s_list
 {
@@ -78,8 +81,6 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 char	**ft_split(char const *s, char c);
-
-char	*ft_itoa(int n);
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned
 int, char));

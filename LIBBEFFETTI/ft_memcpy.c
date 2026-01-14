@@ -11,19 +11,25 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, unsigned long int n)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	unsigned int	i;
-	char			*fonte;
-	char			*destino;
+	size_t	i;
 
-	fonte = (char *)src;
-	destino = (char *)dest;
+	if (!dst)
+		return (NULL);
 	i = 0;
-	while ((fonte[i] != '\0') && (i < n))
+	while (i < n)
 	{
-		destino[i] = fonte[i];
+		*(char*)(dst + i) = *(char*)(src + i);
 		i++;
 	}
-	return (dest);
+	return (dst);
 }
+/*
+int	main()
+{
+	char miao[8];
+
+	printf("%s", ft_memcpy(miao, "123456789", 4));
+	return (0);
+}*/

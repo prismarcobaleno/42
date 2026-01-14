@@ -30,8 +30,8 @@ char	*ft_itoa(int n)
 	return (stri);
 }
 
-int		main ()
+/*int		main ()
 {
 	printf("%lu \n", conta(-9999));
 	return (0);
-}
+}*/
