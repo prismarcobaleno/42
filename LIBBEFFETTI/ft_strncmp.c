@@ -9,8 +9,9 @@
 /*   Updated: 2025/12/04 15:37:25 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_strncmp(char *s1, const char *s2, unsigned long int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	unsigned long int	i;
 	unsigned long int	conta;

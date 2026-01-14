@@ -12,34 +12,19 @@
 
 #include "libft.h"
 
-static int	contastringa(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
-	{
-		i += 1;
-	}
-	return (i);
-}
-
-char	*ft_strrchr(const char *s, int cara)
-{
-	int		i;
-	char	c;
-
-	c = (char) cara;
-	i = contastringa(s) + 1;
-	if (!s)
-		return (NULL);
+	while (s[i])
+		i++;
 	while (i >= 0)
 	{
-		if (s[i--] == c)
-			return ((char *)(s + i + 1));
+		if (s[i] == (char)c)
+			return ((char*)(s + i));
+		i--;
 	}
-	if (s[i] == c)
-		return ((char *)(s + contastringa(s) + 1));
 	return (NULL);
 }
 /*int main(void)
