@@ -14,7 +14,7 @@
 //#include <stdlib.h>
 #include "libft.h"
 
-static size_t	conta(int n)
+static size_t	conta(long n)
 {
 	size_t	i;
 
@@ -42,11 +42,12 @@ char	*ft_itoa(int n)
 	long	num;
 	size_t	i;
 
-	i = conta (n);
 	num = (long) n;
+	i = conta (num);
 	stri = malloc(sizeof(char) * (i + 1));
 	if (!stri)
 		return (NULL);
+	stri[i + 1] = '\0';
 	stri[0] = '0';
 	if (n < 0)
 	{
@@ -61,9 +62,9 @@ char	*ft_itoa(int n)
 	}
 	return (stri);
 }
-int		main ()
-/*{
-	int	i = 0;
+/*int		main ()
+{
+	int	i = -2147483648;
 	printf("%lu \n", conta(i));
 	printf("%s \n", ft_itoa(i));
 	return (0);
