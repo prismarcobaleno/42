@@ -9,6 +9,7 @@
 /*   Updated: 2025/12/04 15:37:30 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 //serve per la prossima
 int	ft_se_minuscola(int s)

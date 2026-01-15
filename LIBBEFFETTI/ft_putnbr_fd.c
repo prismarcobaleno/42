@@ -1,12 +1,22 @@
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/14 20:02:49 by rosmessi          #+#    #+#             */
+/*   Updated: 2026/01/15 15:11:44 by rosmessi         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-static int	ft_ass(int nbr)
+static int	ft_ass(int nmr)
 {
-	if (nbr < 0)
-		return(-nbr);
+	if (nmr < 0)
+		return (-nmr);
 	else
-		return(nbr);
+		return (nmr);
 }
 
 void	ft_putnbr_fd(int n, int fd)
@@ -15,7 +25,10 @@ void	ft_putnbr_fd(int n, int fd)
 	int		nega;
 	int		i;
 
-	nega = (n < 0);
+	if (n < 0)
+		nega = 1;
+	else
+		nega = 0;
 	ft_bzero(str, 13);
 	if (n == 0)
 		str[0] = '0';

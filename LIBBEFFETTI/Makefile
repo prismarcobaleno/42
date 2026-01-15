@@ -7,15 +7,12 @@ SRCS		:= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
 			  ft_strrchr.c ft_strlcpy.c ft_strlcat.c ft_strnstr.c ft_atoi.c ft_calloc.c \
 			  ft_strdup.c ft_substr.c \
 			  ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_strjoin.c ft_strtrim.c \
-			  ft_itoa.c ft_split.c ft_putnbr_fd.c\
+			  ft_itoa.c ft_split.c ft_putnbr_fd.c ft_strmapi.c ft_striteri.c\
 			  \
 			  ft_lstnew.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstadd_front.c ft_lstdelone.c \
-			  ft_lstiter.c \
+			  ft_lstiter.c ft_lstclear.c ft_lstmap.c \
 
-OBJS 		:= ${SRCS:.c=.o} 
-
-#  ft_strmapi.c ft_striteri.c ft_putnbr_fd.c 
-#  
+OBJS 		:= ${SRCS:.c=.o}  
 
 all: $(NAME)
 
@@ -34,7 +31,7 @@ re: fclean
 fclean: clean
 	rm -f $(NAME)
 
-.PHONY: re clean fclean
+.PHONY: re clean fclean all re
 
 # ft_strrchr.c ft_memchr.c ft_memcmp.c  
 #			  ft_substr.c 

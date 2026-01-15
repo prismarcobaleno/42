@@ -1,27 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rosmessi <rosmessi@student.42firenze.it>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/02 17:58:19 by rosmessi          #+#    #+#             */
-/*   Updated: 2025/12/10 11:41:27 by rosmessi         ###   ########.fr       */
+/*   Created: 2026/01/15 15:08:39 by rosmessi          #+#    #+#             */
+/*   Updated: 2026/01/15 15:08:55 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "libft.h"
 
-void	*ft_memset(void *str, int c, unsigned long int n)
+#include "stdio.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char			*p;
-	unsigned int	i;
+	size_t	i;
 
-	p = (char *)str;
 	i = 0;
-	while (i < n)
+	while (s[i])
 	{
-		p[i] = c;
+		(*f)(i, &s[i]);
 		i++;
 	}
-	return (str);
 }
+/*
+char	ft_a(unsigned int i, char c)
+{
+	if (c == 'a' && i != 5)
+	{
+		return ('A');
+	}
+	return ('x');
+}
+
+int	main ()
+{
+	char *s = "aaaaaa3aaa";
+
+	ft_striteri(s, &ft_a);
+	printf("%s", s);
+	printf("\n");
+	return 0;
+}*/

@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <unistd.h>
+//#include <string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 void	*ft_memmove(void *dest, const void *fon, unsigned long lun)
 {
@@ -39,3 +39,10 @@ void	*ft_memmove(void *dest, const void *fon, unsigned long lun)
 	}
 	return (dest);
 }
+/*int	main()
+{
+	char miao[8];
+
+	printf("%s", ft_memmove(miao, "123456789", 4));
+	return (0);
+}*/

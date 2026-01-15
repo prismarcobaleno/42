@@ -9,8 +9,9 @@
 /*   Updated: 2025/12/04 15:36:42 by rosmessi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c < 32 || c > 126)
 	{

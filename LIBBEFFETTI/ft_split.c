@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	word_count(const char *str, char c);
+static int	conta(const char *str, char c);
 static char	*fai_parola(const char *str, int start, int end);
 static void	*ft_free(char **strs, int count);
 static void	ft_inizializza(int *i, int *j, int *s_word);
@@ -25,7 +25,7 @@ char	**ft_split(const char *s, char c)
 	int		s_word;
 
 	ft_inizializza(&i, &j, &s_word);
-	res = ft_calloc((word_count(s, c) + 1), sizeof(char *));
+	res = ft_calloc((conta(s, c) + 1), sizeof(char *));
 	if (!res)
 		return (NULL);
 	while (i <= ft_strlen(s))
@@ -85,7 +85,7 @@ static char	*fai_parola(const char *str, int start, int end)
 	return (word);
 }
 
-static int	word_count(const char *str, char c)
+static int	conta(const char *str, char c)
 {
 	int		count;
 	int		x;

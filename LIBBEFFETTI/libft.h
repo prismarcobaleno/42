@@ -16,11 +16,11 @@
 #include <stdlib.h>
 // POI TOGLILE!!!!!!!
 
-int		ft_isalpha(char c);
+int		ft_isalpha(int c);
 int		ft_isdigit(int c);
-int		ft_isalnum(char c);
+int		ft_isalnum(int c);
 int		ft_isascii(int c);
-int		ft_isprint(char c);
+int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
@@ -59,6 +59,8 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(const char *s, char c);
 char	*ft_itoa(int n);
 
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 typedef struct s_list
 {
