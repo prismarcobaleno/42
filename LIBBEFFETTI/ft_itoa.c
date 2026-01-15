@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 #include "libft.h"
 
 static size_t	conta(int n)
@@ -19,6 +19,10 @@ static size_t	conta(int n)
 	size_t	i;
 
 	i = 0;
+	if (n == 0)
+	{
+		return (1);
+	}
 	if (n < 0)
 	{
 		i = 1;
@@ -35,16 +39,32 @@ static size_t	conta(int n)
 char	*ft_itoa(int n)
 {
 	char	*stri;
+	long	num;
+	size_t	i;
 
-	conta (n);
-	stri = malloc(n);
+	i = conta (n);
+	num = (long) n;
+	stri = malloc(sizeof(char) * (i + 1));
 	if (!stri)
 		return (NULL);
+	stri[0] = '0';
+	if (n < 0)
+	{
+		stri[0] = '-';
+		num = -num;
+	}
+	while (num != 0)
+	{
+		i--;
+		stri[i] = ((num % 10) + 48);
+		num = num / 10;
+	}
 	return (stri);
 }
-
-/*int		main ()
-{
-	printf("%lu \n", conta(-9999));
+int		main ()
+/*{
+	int	i = 0;
+	printf("%lu \n", conta(i));
+	printf("%s \n", ft_itoa(i));
 	return (0);
 }*/
