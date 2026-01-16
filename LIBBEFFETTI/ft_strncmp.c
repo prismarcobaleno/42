@@ -13,8 +13,8 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned long int	i;
-	unsigned long int	conta;
+	size_t	i;
+	size_t	conta;
 
 	i = 0;
 	conta = 0;

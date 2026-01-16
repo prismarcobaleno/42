@@ -14,7 +14,7 @@
 
 static	int	ft_rientra(char c, char const *qui)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	while (qui[i])

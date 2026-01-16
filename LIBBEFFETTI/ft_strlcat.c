@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-unsigned long	ft_strlcat(char *dst, const char *fon, unsigned long size)
+size_t	ft_strlcat(char *dst, const char *fon, size_t size)
 {
-	unsigned long	i;
-	unsigned long	j;
-	unsigned long	lun_d;
-	unsigned long	lun_f;
+	size_t	i;
+	size_t	j;
+	size_t	lun_d;
+	size_t	lun_f;
 
 	lun_f = ft_strlen(fon);
 	lun_d = ft_strlen(dst);
@@ -37,3 +37,19 @@ unsigned long	ft_strlcat(char *dst, const char *fon, unsigned long size)
 		return (size + lun_f);
 	return (lun_d + lun_f);
 }
+/*int main()
+{
+	char s1[] = "AAAAAAAAA";
+	char s2[30] = "BBBB";
+	char s3[] = "AAAAAAAAA";
+	char s4[30] = "BBBB";
+	int x;
+	int y;
+	
+	x = strlcat(s2, s1, 25);
+	printf("%d\n", x);
+	printf("%s\n", s2);
+	y = ft_strlcat(s4, s3, 25);
+	printf("%d\n", y);
+	printf("%s\n", s4);
+}*/

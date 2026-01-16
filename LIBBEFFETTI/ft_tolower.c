@@ -12,7 +12,7 @@
 #include "libft.h"
 
 //serve per la prossima
-int	ft_se_maiuscola(int s)
+static int	ft_se_maiuscola(int s)
 {
 	if (!(s >= 'A' && s <= 'Z'))
 		return (0);

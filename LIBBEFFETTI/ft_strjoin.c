@@ -47,6 +47,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		j++;
 		i++;
 	}
-	punt[i + 1] = '\0';
+	punt[i] = '\0';
 	return (punt);
 }

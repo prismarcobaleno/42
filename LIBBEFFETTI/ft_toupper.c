@@ -12,7 +12,7 @@
 #include "libft.h"
 
 //serve per la prossima
-int	ft_se_minuscola(int s)
+static int	ft_se_minuscola(int s)
 {
 	if (!(s >= 'a' && s <= 'z'))
 		return (0);

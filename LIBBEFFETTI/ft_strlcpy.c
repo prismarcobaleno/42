@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-unsigned long	ft_strlcpy(char *dst, const char *fon, unsigned long size)
+size_t	ft_strlcpy(char *dst, const char *fon, size_t size)
 {
-	unsigned long	i;
+	size_t	i;
 
 	i = 0;
 	if (size > 0)

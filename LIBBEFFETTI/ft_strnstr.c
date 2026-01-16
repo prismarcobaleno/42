@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *libro, const char *parola, unsigned long lun)
+char	*ft_strnstr(const char *libro, const char *parola, size_t lun)
 {
-	unsigned long	i;
-	unsigned long	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (!libro || !parola)
